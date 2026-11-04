@@ -1,54 +1,72 @@
 # Web Development Learning Lab
 
-This repository documents my hands-on journey learning web development, Git, and an AI-assisted software engineering workflow.
+一个按阶段推进、以**独立编程与复盘**为核心的 Web Development 学习仓库。
 
-**CampusConnect is a practice project**, not the final Hanfu club website. A production website for a friend's Hanfu club will be planned around the club's real requirements, likely in a separate repository.
+> 当前练习项目是 **CampusConnect**；它不是最终要交付的汉服社团网站。真正的汉服 Club 产品将在明确朋友的需求后单独规划（必要时建立新仓库）。
 
-## How I learn
+## 学习方法（固定工作流）
 
-Each milestone follows the same loop:
+1. **Learn**：GPT 讲解**一个自然小节**，包括概念、原理、语法、示例、易错点。
+2. **Challenge**：GPT 发布具体需求、限制与验收标准，**不直接给完整实现**。
+3. **Implement**：由我独立写代码、测试；卡住时向 GPT 要分级提示。
+4. **Review**：GPT 对照实际代码和验收标准检查；未掌握的内容针对性补练。
+5. **Summarize**：**我亲自**在 My-Work 中整理理解与错误经验，GPT 只做批改与补充。
+6. **Commit**：完成功能或总结后提交一个有意义的版本记录，必要时 Push 到 GitHub。
 
-1. **Learn:** Understand one new concept, its purpose, syntax, and common mistakes.
-2. **Challenge:** Receive a small, concrete requirement with clear acceptance criteria.
-3. **Implement:** Write and test the code myself. Ask for progressive hints when stuck.
-4. **Review:** Use ChatGPT and GitHub to inspect the implementation and explain issues.
-5. **Summarize:** Write my **own** notes about what I learned and what went wrong; AI can review them, but does not write them for me.
-6. **Commit:** Save a meaningful, tested milestone in Git history before moving on.
+每一个小章节都能回看：**GPT 的教材 → GPT 的需求 → 我的实现 → 我的总结 → Git 历史**。
 
-A commit represents a coherent change, **not** every line edited. Git history preserves earlier versions, while tags can mark larger milestones.
-
-## Learning roadmap
-
-- **Foundations:** HTML, CSS, browser basics, JavaScript fundamentals, and Git/GitHub.
-- **Responsive website:** Build a working, mobile-friendly practice site.
-- **Interactive website:** Use JavaScript and the DOM to implement actual user interactions.
-- **Independent exercises and mini-projects:** Test understanding without copying a complete solution.
-- **AI-assisted workflow:** Review diffs, track issues, test, and improve code with AI as a reviewer.
-
-**Future product:** Plan, build, test, and launch the Hanfu club's minimum viable product (MVP) once the requirements are understood. A small preview can be deployed before the official launch.
-
-## Repository layout
+## 目录
 
 ```text
 learn/
 ├── README.md
-├── .gitattributes
+├── Stage1/
+│   ├── README.md
+│   ├── GPT-Teach/
+│   │   ├── 01-html-document.md
+│   │   ├── 02-semantic-html.md
+│   │   ├── 03-links-and-ids.md
+│   │   └── Practice/
+│   │       ├── 01-hero-html.md
+│   │       └── 02-event-link.md
+│   └── My-Work/
+│       └── README.md
+├── Stage2/
+│   ├── README.md
+│   ├── GPT-Teach/
+│   │   ├── 01-css-selectors.md
+│   │   ├── 02-css-box-model.md
+│   │   └── Practice/
+│   │       └── 01-style-hero.md
+│   └── My-Work/
+│       └── README.md
 └── projects/
     └── campusconnect/
         ├── index.html
         └── style.css
 ```
 
-Folders such as `notes/` and `exercises/` will be added **when I create actual content**. Learning notes are written by me. Projects should evolve incrementally instead of copying the entire site into a new `Stage 2` or `Stage 3` folder.
+**为什么教学和项目分开？** `StageN/GPT-Teach/` 是课程参考与题目；`StageN/My-Work/` 保存自己写的独立练习与总结。`projects/campusconnect/` 则是一份持续迭代的网站源码；不必每个阶段复制一个新网站。阶段成果由 Git Commit、必要时由 Tag 标记。
 
-## Working with this repository
+## 学习路线
 
-- Write code locally in VS Code.
-- Inspect changes and create commits with GitHub Desktop.
-- Push commits to GitHub; use the history to review progress.
-- Use specific commit messages such as `feat: add hero section`, `fix: correct event link`, or `docs: add CSS box-model notes`.
-- Let AI teach, challenge, explain, and review—but keep implementation decisions and learning notes in my own hands.
+- **Stage 1 — HTML Foundations**：文档结构、语义标签、链接、图片、列表、表单。
+- **Stage 2 — CSS + Responsive**：选择器、Cascade、Box Model、Display、Flexbox、Grid、Media Queries。
+- **Stage 3 — JavaScript Fundamentals**：变量、条件、循环、函数、数组、对象。
+- **Stage 4 — Interactive Web**：DOM、Event、表单、Fetch、异步。
+- **Stage 5 — Independent Projects**：独立完成新需求与小项目，迁移检验。
+- **Stage 6 — Hanfu Club MVP**：先调研需求，再选择后端、存储、部署方案；按需另开正式产品仓库。
 
-## Current practice project
+当前只建立已接触过的 Stage 1 / Stage 2 材料；未来章节**学到时再新增**，不要提前把答案堆满仓库。
 
-[CampusConnect](projects/campusconnect/) — a simple HTML/CSS site used for incremental frontend exercises.
+## 工作约定
+
+- GPT 的讲义与任务：保存至对应 `StageN/GPT-Teach/`；每次一个主题。
+- 我自己的代码、题目答卷与总结：保存在 `StageN/My-Work/`；GPT 不替我写个人总结。
+- 持续演化的网站代码：`projects/campusconnect/`。
+- 独立练习的答案不放入 GPT-Teach，以避免练习时直接看到答案。
+- 对应 Git Commit 例子：`docs: add CSS box-model lesson`、`feat: style hero section`、`docs: add my box-model summary`。
+
+## 当前项目
+
+[CampusConnect](projects/campusconnect/) — HTML/CSS 学习用的持续迭代练习网站。正式 Hanfu Club 项目另行确定需求与名称。
